@@ -3,6 +3,7 @@
 //CONNECTS TO MONGO DB
 let mongooseConnect = require('mongoose');
 mongooseConnect.Promise = global.Promise;
-mongooseConnect.connect('mongodb://amandamoore3:<password>@ds115124.mlab.com:15124/cattletracks');
+mongooseConnect.connect('mongodb://amandamoore3:<password>.mlab.com:15124/cattletracks', { useNewUrlParser: true });
+mongooseConnect.set('useCreateIndex', true);
 
 module.exports = { mongooseConnect };
